@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- included a background color in the layout, and gave it 10dp of padding for the content -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="cosc426.assign1part6.MainActivity"
+    android:background="#edeef4">
+
+    <!-- this textview is the label for the number of primes, padding is 10dp to align properly
+    with the edittext that will be next to it-->
+    <TextView
+        android:id="@+id/numberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Number of Primes:"
+        android:textSize="@dimen/textSize" />
+
+    <!-- this editText is where the user enters the number of primes they want to print, given
+    a unique background color, padding of 10dp to match textView, and a designated width for a
+    more appealing look, gravity is also centered so the user is typing in the center of the box-->
+    <EditText
+        android:id="@+id/numberInput"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/numberLabel"
+        android:layout_marginTop="15dp"
+        android:background="#FFFFFF"
+        android:textColor="@color/button"
+        android:padding="10dp"
+        android:textSize="@dimen/textSize"
+        android:gravity="center"/>
+
+    <!-- this is the run button, it is centered in the page horizontally, given background and text
+    color and margins to give it space between it and other elements above and below it-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/numberInput"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/button"
+        android:textColor="#e5e5ee"
+        android:text="Run"
+        android:textSize="26dp"
+        android:onClick="run"/>
+
+    <!-- this scrollviews contains the textview that displays the prime numbers that are generated
+    in the java code-->
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/outputPrimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/resultText"
+            android:textColor="@color/numberColor"
+            android:text=""/>
+    </ScrollView>
+</RelativeLayout>
